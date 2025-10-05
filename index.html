@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.S. Infrastructure</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Fallback color to prevent black screen */
+    body {
+      background-color: #000;
+      color: #f5f5f5;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Optional loading visibility */
+    section, header, footer {
+      display: block;
+    }
+
+    /* Ensure hidden elements are visible by default */
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+        <img src="img/logo.jpg" alt="F.S. Infrastructure Logo" class="logo-img">
+    </div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <nav class="nav-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-content">
+      <h1><span class="calligraphy">We Build Your Vision</span></h1>
+      <p>Crafting spaces that blend functionality and design.</p>
+      <a href="#contact" class="btn">Book Appointment</a>
+    </div>
+  </section>
+
+    
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container about-flex">
+            <!-- About Text -->
+            <div class="about-text">
+            <h2>About Us</h2>
+            <p>
+                Founded by <span class="calligraphy1">Er. Farez Ahmed Gazi</span>, F.S. Infrastructure brings years of experience in architecture, interior design, and construction. We focus on creating elegant, functional, and sustainable spaces tailored to your needs.
+            </p>
+            <p>
+                F.S.Infrastructure – India’s Most Trusted & Esteemed Engineering, Interior-Architectural design firm located in Kolkata, West Bengal. Founded by Farez Ahmed Gazi, with over 8 years of experience, the firm specializes in innovative Residential and Commercial Projects.
+            </p>
+            <p>
+                Clients are drawn to F.S.Infrastructure for its meticulous attention to detail and personalized service that seamlessly blends aesthetics with functionality. Committed to sustainability and high-quality design & craftsmanship, F.S.Infrastructure has become a trusted name in the design industry since its establishment.
+            </p>
+            </div>
+
+            <!-- Founder Card -->
+            <div class="founder-card">
+            <img src="img/founder.png" alt="Er. Farez Ahmed Gazi">
+            <h3>Er. Farez Ahmed Gazi</h3>
+            <p class="credentials">(M.Bdes, B.Tech, Dip)<br>[Civil Engineer, Chartered Engineer, Architect, Interior Designer]</p>
+            <p class="membership">AM3158902, Member of IE(INDIA)</p>
+            <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+            </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+  <div class="container">
+    <h2>Our Projects</h2>
+    <div class="projects-grid">
+      <a href="project.html" class="project-card" style="background-image: url('img/prj1.jpg');">
+        <div class="project-info">
+          <h3>Residential</h3>
+          <p>30+ Completed</p>
+        </div>
+      </a>
+      <a href="project.html" class="project-card" style="background-image: url('img/prj2.jpg');">
+        <div class="project-info">
+          <h3>Commercial</h3>
+          <p>15+ Completed</p>
+        </div>
+      </a>
+      <a href="project.html" class="project-card" style="background-image: url('img/prj1.jpg');">
+        <div class="project-info">
+          <h3>Industrial</h3>
+          <p>8+ Completed</p>
+        </div>
+      </a>
+      <a href="project.html" class="project-card" style="background-image: url('img/prj2.jpg');">
+        <div class="project-info">
+          <h3>Renovations</h3>
+          <p>12+ Completed</p>
+        </div>
+        </a>
+        </div>
+    </div>
+    <div class="project-counters">
+  <div class="counter-box">
+    <h2 class="counter" data-target="243">0</h2>
+    <p>PROJECTS</p>
+  </div>
+  <div class="counter-box">
+    <h2 class="counter" data-target="178">0</h2>
+    <p>RESIDENTIAL</p>
+  </div>
+  <div class="counter-box">
+    <h2 class="counter" data-target="65">0</h2>
+    <p>COMMERCIAL</p>
+  </div>
+    </div>
+
+    </section>
+
+
+
+
+  <!-- Services Section -->
+  <section id="services" class="services">
+    <div class="container">
+      <h2>Our Services</h2>
+      <div class="service-list">
+        <div class="service-card">
+          <i class="fas fa-ruler-combined"></i>
+          <h3>Interior Design</h3>
+          <p>Transforming your spaces into elegant, functional works of art.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-drafting-compass"></i>
+          <h3>Architectural Design</h3>
+          <p>Innovative and sustainable architectural planning and execution.</p>
+        </div>
+        <div class="service-card">
+          <i class="fas fa-home"></i>
+          <h3>Construction</h3>
+          <p>Quality construction ensuring durability and precision.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials">
+    <div class="container">
+      <h2>What Our Clients Say</h2>
+      <div class="testimonial-container">
+        <div class="testimonial active">
+          <p>"Exceptional work and timely delivery. Highly recommended!"</p>
+          <h4>- Client A</h4>
+        </div>
+        <div class="testimonial">
+          <p>"Their designs are elegant and functional. Great experience!"</p>
+          <h4>- Client B</h4>
+        </div>
+        <div class="testimonial">
+          <p>"Professional and creative team. They brought our ideas to life beautifully."</p>
+          <h4>- Client C</h4>
+        </div>
+      </div>
+      <div class="slider-controls">
+        <button class="prev"><i class="fas fa-chevron-left"></i></button>
+        <button class="next"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-container">
+    <!-- Get in Touch -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:info@fsinfrastructure.com">info@fsinfrastructure.com</a></p>
+      <p>Phone: <a href="tel:+911234567890">+91 12345 67890</a></p>
+      <div class="social-links">
+        <a href="#" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Address / Location -->
+    <div class="footer-section">
+      <h3>Our Location</h3>
+      <p>F.S. Infrastructure</p>
+      <p>123, Park Street, Kolkata, West Bengal, India</p>
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3689.043944907405!2d88.36161931545362!3d22.573759985148753!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a0277b40ff5baf1%3A0xabc123456789!2sPark%20Street%2C%20Kolkata!5e0!3m2!1sen!2sin!4v1685000000000!5m2!1sen!2sin" 
+        width="100%" 
+        height="150" 
+        style="border:0;" 
+        allowfullscreen="" 
+        loading="lazy"
+      ></iframe>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="footer-section">
+      <h3>Opening Hours</h3>
+      <p>Monday - Friday: 9:00 AM - 6:00 PM</p>
+      <p>Saturday: 10:00 AM - 3:00 PM</p>
+      <p>Sunday: Closed</p>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 F.S. Infrastructure. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</body>
+</html>

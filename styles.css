@@ -1,4 +1,4 @@
-/* ---------- GLOBAL STYLES ---------- */
+/* -------------------- GLOBAL STYLES -------------------- */
 * {
   margin: 0;
   padding: 0;
@@ -16,37 +16,24 @@ body {
   line-height: 1.6;
 }
 
-/* Typography */
 h1, h2, h3, h4 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', sans-serif;
   color: #111;
 }
 
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&display=swap');
 
 .calligraphy1 {
-  font-family: 'Great Vibes', cursive;
+  font-family: 'Italianno', serif;
   color: #F5BD02;
 }
-.calligraphy {
-   font-family: 'Parisienne';
-  font-size: 4rem;           /* adjust size as needed */
-  color: #d4af37;            /* royal gold */
-  text-shadow: 0 0 8px rgba(212, 175, 55, 0.3);
-  letter-spacing: 1px;
-  font-weight: 400;
-  
-  background: radial-gradient(circle, rgb(26, 26, 26) 0%, rgba(26, 26, 26, 0) 70%);
-  /* Creates fade-out edges */
-}
-
 
 a {
   text-decoration: none;
   color: inherit;
 }
 
-/* ---------- NAVBAR ---------- */
+/* -------------------- NAVBAR -------------------- */
 .navbar {
   position: fixed;
   width: 100%;
@@ -68,17 +55,15 @@ a {
 }
 
 .logo {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .logo-img {
-    width: 150px; /* adjust as needed */
-    height: auto;
-    border-radius: 5px;
+  width: 150px;
+  height: auto;
+  border-radius: 5px;
 }
-
-
 
 .nav-menu {
   display: flex;
@@ -96,7 +81,7 @@ a {
   color: #F5BD02;
 }
 
-/* Hamburger Menu (Mobile) */
+/* Hamburger Menu */
 .hamburger {
   display: none;
   font-size: 1.6rem;
@@ -107,71 +92,86 @@ a {
   color: #111;
 }
 
-/* ---------- HERO SECTION ---------- */
-/* .hero {
-  background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
-} */
-
+/* -------------------- HERO -------------------- */
 .hero {
-  background: url('img/luxury-villa.jpg') 
-              center center / cover no-repeat fixed;
+  background: url('img/luxury-villa.jpg') center center / cover no-repeat fixed;
+  position: relative;
+  color: #fff;
+  text-align: center;
+  padding: 100px 20px;
   height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  color: #fff;
-  position: relative;
 }
-
 
 .hero::after {
   content: "";
   position: absolute;
-  top: 0; left: 0;
-  width: 100%;
+  top: 0;
+  left: 0;
+  width: 100%; 
   height: 100%;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 100%;
+  margin: auto;
   padding: 20px;
 }
 
-.hero h1 {
-  font-size: 2.8rem;
-  margin-bottom: 15px;
+.calligraphy {
+  font-family: 'Charm', cursive;
+  font-size: 4rem;
+  color: #d4af37;
+  text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+  letter-spacing: 1.5px;
+  font-weight: 100;
+  display: inline-block;
+  position: relative;
+  z-index: 2;
+  margin-bottom: -20px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  margin-bottom: 30px;
+.calligraphy:hover {
+  transform: scale(1.03);
+  text-shadow: 0 0 18px rgba(245, 189, 2, 0.5);
+}
+
+.hero h2 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #ffffff;
+  position: relative;
+  top: -10px;
+  z-index: 1;
+  margin-top: 0;
 }
 
 .btn {
-  background: #F5BD02;
-  color: #fff;
-  padding: 12px 30px;
+  background-color: #F5BD02;
+  color: #000;
+  padding: 14px 36px;
   border-radius: 30px;
-  font-weight: 500;
-  transition: 0.3s;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.3s ease;
 }
 
 .btn:hover {
-  background: #b1874e;
+  background-color: #fff;
+  color: #111;
+  box-shadow: 0 0 15px rgba(245, 189, 2, 0.5);
 }
 
-/* ---------- ABOUT ---------- */
+/* -------------------- ABOUT -------------------- */
 .about {
   padding: 20px 20px;
   background: #f9f9f9;
@@ -267,62 +267,9 @@ a {
   background: #d4af37;
 }
 
-/* Responsive */
-@media (max-width: 1024px) {
-  .about-flex {
-    gap: 40px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-flex {
-    flex-direction: column-reverse;
-    align-items: center;
-    text-align: center;
-  }
-
-  .about-text {
-    text-align: center;
-  }
-
-  .founder-card {
-    max-width: 400px;
-    width: 100%;
-  }
-}
-
-
-/* ---------- PROJECTS ---------- */
-/* .projects {
-  padding: 100px 20px;
-  text-align: center;
-}
-
-.project-stats {
-  display: flex;
-  justify-content: center;
-  gap: 50px;
-  flex-wrap: wrap;
-  margin-top: 40px;
-}
-
-.project-stats div {
-  background: #f2f2f2;
-  padding: 25px 40px;
-  border-radius: 10px;
-  transition: 0.3s;
-}
-
-.project-stats div:hover {
-  background: #F5BD02;
-  color: #fff;
-}
-
-.project-stats h3 {
-  margin-bottom: 10px;
-} */
+/* -------------------- PROJECTS -------------------- */
 .projects {
-  padding: 120px;
+  padding: 80px 20px;
   position: relative;
   text-align: center;
   background: url('img/luxury-villa.jpg') center/cover no-repeat fixed;
@@ -337,7 +284,7 @@ a {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.35); /* dark overlay */
+  background: rgba(0,0,0,0.35);
   backdrop-filter: blur(6px);
   z-index: 0;
 }
@@ -349,13 +296,12 @@ a {
 
 .projects h2 {
   font-size: 2.8rem;
-  margin-bottom: 50px;
+  margin-bottom: 35px;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: #F5BD02;
 }
 
-/* Grid Layout */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -364,7 +310,6 @@ a {
   align-items: stretch;
 }
 
-/* Project Picture Cards */
 .project-card {
   position: relative;
   width: 100%;
@@ -377,12 +322,11 @@ a {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-shadow: 0 10px 30px rgba(0,0,0,0.2);
   cursor: pointer;
-  display: block; /* make link block-level */
-  text-decoration: none; /* remove underline */
-  color: inherit; /* inherit text color */
+  display: block;
+  text-decoration: none;
+  color: inherit;
 }
 
-/* Dark overlay inside card for readability */
 .project-card::before {
   content: '';
   position: absolute;
@@ -394,7 +338,6 @@ a {
   transition: background 0.3s ease;
 }
 
-/* Info inside card */
 .project-info {
   position: absolute;
   bottom: 20px;
@@ -416,7 +359,6 @@ a {
   color: #fff;
 }
 
-/* Hover Effect */
 .project-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 20px 40px rgba(0,0,0,0.3);
@@ -426,28 +368,12 @@ a {
   background: rgba(0,0,0,0.2);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .projects {
-    padding: 80px 15px;
-  }
-  
-  .projects h2 {
-    font-size: 2.2rem;
-    margin-bottom: 30px;
-  }
-
-  .project-card {
-    height: 200px;
-  }
-}
-
-/* ----------------------Project Counter------------------ */
+/* Project Counters */
 .project-counters {
   display: flex;
   justify-content: center;
   gap: 50px;
-  margin-top: 50px;
+  margin-top: 35px;
   flex-wrap: wrap;
 }
 
@@ -476,96 +402,113 @@ a {
   letter-spacing: 1px;
 }
 
-
-/* ---------- SERVICES ---------- */
+/* -------------------- SERVICES -------------------- */
 .services {
   padding: 100px 20px;
-  background: #fafafa;
   text-align: center;
+  background: #fff;
+}
+
+.services h2 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: #F5BD02;
 }
 
 .service-list {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 30px;
-  margin-top: 40px;
+  flex-wrap: wrap;
 }
 
 .service-card {
-  background: #fff;
-  padding: 30px;
+  background: #fdf5e6; /* light warm background */
+  padding: 30px 20px;
   border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-  transition: 0.3s;
+  width: 280px;
+  transition: transform 0.3s, box-shadow 0.3s;
+  text-align: center;
 }
 
 .service-card i {
-  font-size: 2rem;
+  font-size: 40px;
   color: #F5BD02;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.service-card p {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.5;
 }
 
 .service-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0,0,0,0.15);
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(245, 189, 2, 0.4);
+  background: #fff8e1;
 }
 
-/* ---------- TESTIMONIALS ---------- */
+/* -------------------- TESTIMONIALS -------------------- */
 .testimonials {
-  padding: 100px 20px;
+  background: #14213d;
+  color: #fff;
+  padding: 80px 20px;
   text-align: center;
+}
+
+.testimonials h2 {
+  font-size: 2.8rem;
+  margin-bottom: 35px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #F5BD02;
+}
+
+#testimonial-slider .testimonial-item {
   background: #fff;
+  color: #14213d;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
-.testimonial-container {
-  position: relative;
-  max-width: 700px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-
-.testimonial {
-  display: none;
-  opacity: 0;
-  transition: opacity 0.5s ease;
-}
-
-.testimonial.active {
-  display: block;
-  opacity: 1;
-}
-
-.testimonial p {
-  font-style: italic;
-  color: #444;
+#testimonial-slider .testimonial-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #F5BD02;
   margin-bottom: 15px;
 }
 
-.testimonial h4 {
+.testimonial-item h3 {
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.testimonial-item .job {
   color: #F5BD02;
-  font-weight: 600;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
 }
 
-.slider-controls {
-  margin-top: 25px;
+.testimonial-item .text {
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
-.slider-controls button {
-  background: #F5BD02;
-  color: #fff;
-  border: none;
-  padding: 8px 15px;
-  border-radius: 50%;
-  margin: 0 8px;
-  cursor: pointer;
-  transition: 0.3s;
-}
 
-.slider-controls button:hover {
-  background: #b1874e;
-} 
 
-/* ---------- CONTACT ---------- */
+/* -------------------- CONTACT -------------------- */
 .contact {
   padding: 100px 20px;
   background: #fafafa;
@@ -611,8 +554,170 @@ a {
   background: #b1874e;
 }
 
+/* -------------------- FOOTER -------------------- */
+.footer {
+  background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+  color: #fff;
+  padding: 90px 20px 40px;
+  font-family: 'Poppins', sans-serif;
+  position: relative;
+  overflow: hidden;
+}
 
-/* ---------- RESPONSIVE DESIGN ---------- */
+.footer::before {
+  content: "";
+  position: absolute;
+  top: -150px;
+  left: -150px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(245,189,2,0.15) 0%, transparent 70%);
+  z-index: 0;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 60px;
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-section {
+  flex: 1 1 300px;
+  min-width: 280px;
+  padding: 10px 10px;
+}
+
+.footer-section h3 {
+  color: #F5BD02;
+  font-size: 1.4rem;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 55px;
+  height: 3px;
+  background-color: #F5BD02;
+  border-radius: 2px;
+}
+
+.footer-section p,
+.footer-section a {
+  color: #ccc;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section a:hover {
+  color: #F5BD02;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid rgba(255,255,255,0.15);
+  margin-top: 60px;
+  padding-top: 25px;
+  color: #bbb;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-bottom span {
+  color: #F5BD02;
+}
+
+/* Footer hover glow */
+.footer a:hover,
+.footer .social-links a:hover i {
+  text-shadow: 0 0 8px rgba(245, 189, 2, 0.5);
+}
+
+/* -------------------- FLOATING CONTACT BUTTON -------------------- */
+.contact-btn {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: flex-end;
+  z-index: 9999;
+  font-family: 'Poppins', sans-serif;
+}
+
+.contact-btn .main-btn {
+  background-color: #F5BD02;
+  color: #000;
+  padding: 14px 22px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+  transition: all 0.3s ease;
+}
+
+.contact-btn .main-btn:hover {
+  background-color: #fff;
+  color: #111;
+  transform: scale(1.05);
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.contact-options a {
+  background-color: #fff;
+  color: #000;
+  width: 50px;
+  height: 50px;
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+  font-size: 1.2rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.contact-options a:hover {
+  background-color: #F5BD02;
+  color: #000;
+  transform: translateY(-3px);
+}
+
+.contact-btn:hover .contact-options {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* -------------------- RESPONSIVE -------------------- */
+@media (max-width: 1024px) {
+  .about-flex {
+    gap: 40px;
+  }
+}
+
 @media (max-width: 900px) {
   .nav-menu {
     position: absolute;
@@ -635,6 +740,67 @@ a {
   }
 }
 
+@media (max-width: 768px) {
+  .calligraphy {
+    font-size: 2.8rem;
+  }
+  .hero h2 {
+    font-size: 2rem;
+  }
+  .btn {
+    padding: 12px 28px;
+    font-size: 0.95rem;
+  }
+
+  .about-flex {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+  }
+
+  .founder-card {
+    max-width: 400px;
+    width: 100%;
+  }
+
+  .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+  }
+
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+
+  .map-container iframe {
+    height: 200px;
+  }
+
+  .projects {
+    padding: 80px 15px;
+  }
+
+  .projects h2 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+
+  .project-card {
+    height: 200px;
+  }
+}
+
 @media (max-width: 600px) {
   .hero h1 {
     font-size: 2rem;
@@ -650,81 +816,5 @@ a {
 
   .testimonial-container {
     padding: 0 10px;
-  }
-}
-
-/* -----------------------footer---------------- */
-.footer {
-  background-color: #000000; /* dark theme */
-  color: #fff;
-  padding: 60px 20px 20px;
-  font-family: 'Arial', sans-serif;
-}
-
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 30px;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.footer-section {
-  flex: 1 1 250px;
-  min-width: 250px;
-}
-
-.footer-section h3 {
-  color: #F5BD02;
-  margin-bottom: 15px;
-  font-size: 1.3rem;
-}
-
-.footer-section p, 
-.footer-section a {
-  color: #fff;
-  margin-bottom: 8px;
-  text-decoration: none;
-  font-size: 0.95rem;
-}
-
-.footer-section a:hover {
-  color: #F5BD02;
-}
-
-.social-links {
-  display: flex;
-  gap: 15px;
-  margin-top: 10px;
-}
-
-.social-links a {
-  color: #fff;
-  font-size: 1.1rem;
-}
-
-.social-links a:hover {
-  color: #F5BD02;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 20px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  margin-top: 30px;
-  font-size: 0.9rem;
-  color: #ccc;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .footer-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .footer-section {
-    text-align: center;
   }
 }

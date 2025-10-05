@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>F.S. Infrastructure</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@600&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Parisienne&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+   <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Fallback color to prevent black screen */
+    body {
+      background-color: #000;
+      color: #f5f5f5;
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Optional loading visibility */
+    section, header, footer {
+      display: block;
+    }
+
+    /* Ensure hidden elements are visible by default */
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">
+        <img src="img/logo.jpg" alt="F.S. Infrastructure Logo" class="logo-img">
+    </div>
+    <div class="hamburger"><i class="fas fa-bars"></i></div>
+    <nav class="nav-menu">
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+  <div class="hero-content">
+    <h1><span class="calligraphy" >Luxury & Comfort</span></h1>
+    <h2>Passionate Living Spaces</h2>
+    <a href="#contact" class="btn">Book Appointment</a>
+  </div>
+</section>
+
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Contact Us</h2>
+      <form class="contact-form">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Your Message" rows="4" required></textarea>
+        <button type="submit" class="btn">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+  <div class="footer-container">
+    
+    <!-- Get in Touch -->
+    <div class="footer-section">
+      <h3>Get in Touch</h3>
+      <p>Email: <a href="mailto:info@fsinfrastructure.com">info@fsinfrastructure.com</a></p>
+      <p>Phone: <a href="tel:+919007776923">+91 90077 76923</a></p>
+      <div class="social-links">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+
+    <!-- Address / Location -->
+    <div class="footer-section">
+      <h3>Our Location</h3>
+      <p><strong>F.S. Infrastructure</strong></p>
+      <p>Santoshpur Station Road, Green Paradise Apartment, beside More Super Market, Kolkata, West Bengal, India</p>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14745.288762451484!2d88.3787191657753!3d22.492091772784015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a02716994b86ccd%3A0x29a7b254baec018c!2sSantoshpur%2C%20Kolkata%2C%20West%20Bengal!5e0!3m2!1sen!2sin!4v1759636731802!5m2!1sen!2sin" 
+        width="100%" height="160" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+    </div>
+
+    <!-- Opening Hours -->
+    <div class="footer-section">
+      <h3>Opening Hours</h3>
+      <ul class="hours">
+        <li><span>Monday - Friday:</span> 9:00 AM - 6:00 PM</li>
+        <li><span>Saturday:</span> 10:00 AM - 3:00 PM</li>
+        <li><span>Sunday:</span> Closed</li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>&copy; 2025 <span>F.S. Infrastructure</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+</body>
+</html>

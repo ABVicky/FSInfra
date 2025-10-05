@@ -1,4 +1,4 @@
-// Wait for DOM to load
+// ======================== DOM READY ========================
 document.addEventListener("DOMContentLoaded", () => {
 
     // ===== Mobile Navigation Toggle =====
@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
             navMenu.classList.toggle('active');
         });
 
-        // Close mobile menu when clicking on a link
+        // Close mobile menu when clicking on any link
         document.querySelectorAll('.nav-menu a').forEach(link => {
             link.addEventListener('click', () => {
                 hamburger.classList.remove('active');
@@ -47,81 +47,82 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ===== Testimonial Slider =====
-    const testimonials = document.querySelectorAll('.testimonial');
-    const prevBtn = document.querySelector('.prev');
-    const nextBtn = document.querySelector('.next');
-    let currentTestimonial = 0;
-
-    function showTestimonial(index) {
-        if (testimonials.length === 0) return;
-        testimonials.forEach((testimonial, i) => {
-            testimonial.classList.toggle('active', i === index);
+    $(document).ready(function(){
+        $("#testimonial-slider").owlCarousel({
+            items:2,
+            itemsDesktop:[1000,2],
+            itemsDesktopSmall:[980,1],
+            itemsTablet:[768,1],
+            pagination:true,
+            navigation:true,
+            navigationText:["<",">"],
+            autoPlay:true
         });
-    }
+    });
 
-    if (nextBtn && prevBtn && testimonials.length > 0) {
-        nextBtn.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        });
 
-        prevBtn.addEventListener('click', () => {
-            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        });
 
-        // Auto-slide testimonials every 5 seconds
-        setInterval(() => {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            showTestimonial(currentTestimonial);
-        }, 5000);
-
-        showTestimonial(0); // Initialize
-    }
 
     // ===== Contact Form Handling =====
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', (e) => {
             e.preventDefault();
-            alert("Thank you for your message! We'll get back to you soon.\n(This is a demo — integrate backend for real submissions.)");
+            alert(
+                "Thank you for your message! We'll get back to you soon.\n" +
+                "(This is a demo — integrate backend for real submissions.)"
+            );
             contactForm.reset();
         });
     }
 
 });
 
-// ----------------------------Project Counter--------------
+// ======================== Project Counters ========================
 const counters = document.querySelectorAll('.counter');
 
 counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-target');
-    const count = +counter.innerText;
+    const updateCount = () => {
+        const target = +counter.getAttribute('data-target');
+        const count = +counter.innerText;
 
-    const increment = Math.ceil(target / 500); // slower increment
+        const increment = Math.ceil(target / 500); // slower increment
 
-    if (count < target) {
-      counter.innerText = count + increment;
-      setTimeout(updateCount, 20); // increase delay to slow it further
-    } else {
-      counter.innerText = target;
-    }
-  };
+        if (count < target) {
+            counter.innerText = count + increment;
+            setTimeout(updateCount, 20); // delay to control speed
+        } else {
+            counter.innerText = target;
+        }
+    };
 
-  // Trigger when visible
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        updateCount();
-        observer.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.5 });
+    // Trigger counter when element is visible in viewport
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                updateCount();
+                observer.unobserve(entry.target); // stop observing once counted
+            }
+        });
+    }, { threshold: 0.5 });
 
-  observer.observe(counter);
+    observer.observe(counter);
 });
 
-// ----------------------------End of Project Counter--------------
-// ------------------------testimonial slider------------------------
+// ======================== Floating Contact Button ========================
+const contactBtn = document.querySelector('.contact-btn');
+const contactOptions = document.querySelector('.contact-options');
 
+if (contactBtn && contactOptions) {
+    contactBtn.addEventListener('mouseenter', () => {
+        contactOptions.style.opacity = '1';
+        contactOptions.style.transform = 'translateY(0)';
+        contactOptions.style.pointerEvents = 'auto';
+    });
+
+    contactBtn.addEventListener('mouseleave', () => {
+        contactOptions.style.opacity = '0';
+        contactOptions.style.transform = 'translateY(20px)';
+        contactOptions.style.pointerEvents = 'none';
+    });
+}

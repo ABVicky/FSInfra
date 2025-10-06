@@ -151,7 +151,7 @@ window.onclick = e => {
   if(e.target == confirmModal) confirmModal.classList.remove("show");
 }
 
-// Click on card -> open confirmation
+// Card click -> confirmation
 cards.forEach(card => {
   card.addEventListener("click", () => {
     const type = card.getAttribute("data-type");
@@ -165,6 +165,6 @@ cards.forEach(card => {
   });
 });
 
-// Confirm modal buttons
+// Confirm modal actions
 confirmYes.onclick = () => { window.location.href = redirectLink; confirmModal.classList.remove("show"); }
 confirmNo.onclick = () => { confirmModal.classList.remove("show"); }

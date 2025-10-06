@@ -1,0 +1,460 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Projects — F.S. styled Projects Gallery</title>
+
+  <!-- Pull same fonts as the site -->
+  <link href="https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Poppins:wght@500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    /* Palette pulled from the site's styles.css */
+    :root{
+      --text:#222;
+      --muted:#666;
+      --bg:#fff;
+      --gold:#d4af37; /* primary accent */
+      --warm:#f5bd02; /* warm accent */
+      --card-shadow: 0 15px 35px rgba(0,0,0,0.1);
+      --radius:14px;
+      --max-width:1200px;
+    }
+
+    html,body{height:100%;}
+    body{
+      margin:0;
+      font-family: 'Roboto', sans-serif;
+      color:var(--text);
+      background:var(--bg);
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      padding: 120px 20px 40px;
+      display:flex;
+      
+      justify-content:center;
+    }
+
+    .wrap{width:100%;max-width:var(--max-width);} 
+
+    header.projects-hero{
+      display:flex;align-items:center;justify-content:space-between;margin-bottom:28px;
+    }
+    header .title{font-size: 2.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        font-family: 'Poppins', sans-serif;
+        color: #F5BD02;}
+    header .subtitle{color:var(--muted);font-size:14px}
+
+    /* grid */
+    .grid{
+      display:grid;
+      gap:22px;
+      grid-template-columns:repeat(auto-fill,minmax(220px,1fr));
+    }
+
+    .card{
+      background:linear-gradient(180deg, #ffffff 0%, #fff8e1 100%);
+      border-radius:var(--radius);
+      box-shadow:var(--card-shadow);
+      overflow:hidden;
+      cursor:pointer;
+      transition:transform .22s ease, box-shadow .22s ease;
+      display:flex;flex-direction:column;
+    }
+    .card:hover{transform:translateY(-6px);box-shadow:0 30px 60px rgba(0,0,0,0.12)}
+
+    .card .thumb{height:150px;flex:0 0 150px;background:#f3f3f3;display:block;object-fit:cover;width:100%}
+    .card .meta{padding:14px 16px;display:flex;flex-direction:column;gap:8px}
+    .card .meta h3{margin:0;font-size:16px;font-weight:600;font-family:'Poppins',sans-serif}
+    .card .meta p{margin:0;font-size:13px;color:var(--muted)}
+
+    /* modal backdrop */
+    .modal-backdrop{
+      position:fixed;inset:0;background:rgba(10,10,10,0.6);display:none;align-items:center;justify-content:center;padding:20px;z-index:9999;
+    }
+    .modal{width:100%;max-width:980px;background:var(--bg);border-radius:18px;box-shadow:0 30px 80px rgba(0,0,0,0.4);overflow:hidden;display:flex;flex-direction:column}
+
+    .modal-head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid #f0e9dc}
+    .modal-head h2{margin:0;font-family:'Poppins',sans-serif}
+    .modal-head .close{background:transparent;border:0;font-size:20px;cursor:pointer}
+
+    .modal-body{display:grid;grid-template-columns:1fr 340px;gap:18px;padding:18px}
+    @media (max-width:900px){.modal-body{grid-template-columns:1fr;}}
+    /* ---------- MOBILE UX IMPROVEMENTS ---------- */
+    @media (max-width: 768px) {
+
+    body {
+        padding-top: 100px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr; /* single-column for focus */
+        gap: 1.5rem;
+    }
+
+    .project-card {
+        padding: 18px;
+        border-radius: 16px;
+        box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .project-card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    }
+
+    .project-card img {
+        height: 200px;
+        object-fit: cover;
+        border-radius: 12px;
+        margin-bottom: 12px;
+    }
+
+    .project-card h3 {
+        font-size: 1.2rem;
+        margin-bottom: 8px;
+    }
+
+    .project-card p {
+        font-size: 0.9rem;
+        line-height: 1.5;
+        color: #555;
+    }
+
+    /* Modal improvements */
+    .modal-content {
+        width: 90%;
+        height: 80%;
+        padding: 20px;
+        border-radius: 16px;
+        overflow-y: auto;
+    }
+
+    .modal-gallery {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .modal-gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+    }
+
+    .close-btn {
+        top: 8px;
+        right: 10px;
+        font-size: 1.8rem;
+    }
+    }
+
+
+    /* gallery */
+    .gallery{
+      display:flex;flex-direction:column;gap:12px;
+    }
+    .gallery .main{
+      height:360px;border-radius:12px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:#f6f6f6
+    }
+    .gallery .main img{width:100%;height:100%;object-fit:cover}
+
+    .thumb-row{display:flex;gap:8px;overflow:auto;padding-top:6px}
+    .thumb-row img{width:76px;height:56px;object-fit:cover;border-radius:8px;cursor:pointer;flex:0 0 auto;box-shadow:0 6px 18px rgba(0,0,0,0.08)}
+
+    /* sidebar details */
+    .details{padding:10px 6px}
+    .details h3{margin:0 0 8px 0}
+    .details p{color:var(--muted);font-size:14px;line-height:1.5}
+    .meta-kv{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+    .meta-kv span{background:#f9f9f9;padding:8px 12px;border-radius:10px;font-size:13px}
+
+    .modal-footer{padding:16px;border-top:1px solid #f0e9dc;display:flex;align-items:center;justify-content:space-between}
+    .btn{background:var(--gold);color:#111;padding:10px 14px;border-radius:10px;border:0;font-weight:600;cursor:pointer}
+
+    /* small helpers */
+    .muted{color:var(--muted);font-size:13px}
+
+    /* accessibility - show when active */
+    .modal-backdrop.show{display:flex}
+  </style>
+</head>
+<body>
+    <!-- Header / Navbar -->
+  <header class="navbar" role="banner">
+    <div class="logo">
+      <a href="index.html">
+        <img src="img/logo.jpg" alt="F.S. Infrastructure Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="hamburger" aria-label="Toggle navigation"><i class="fas fa-bars"></i></button>
+    <nav class="nav-menu" role="navigation" aria-label="Main Navigation">
+      <a href="index.html">Home</a>
+      <a href="#projects">Projects</a>
+      <a href="#services">Services</a>
+      <a href="#testimonials">Testimonials</a>
+      <a href="#about">About</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  
+
+  <div class="wrap">
+    <header class="projects-hero">
+      <div>
+        <div class="title">Projects</div>
+        <div class="subtitle">A visual showcase of selected works — click any card to open details.</div>
+      </div>
+      <!-- <div class="muted">15 projects · </div> -->
+    </header>
+
+    <section class="grid" id="projectsGrid">
+      <!-- 15 static cards (images use existing site images where possible) -->
+
+      <!-- We'll repeat a pattern; when you integrate, replace src with real project thumbnail -->
+
+      <!-- Repeating 15 cards -->
+      <article class="card" data-project-id="1">
+        <img class="thumb" src="img/prj1.jpg" alt="Project 1" loading="lazy">
+        <div class="meta">
+          <h3>Luxury Villa — Private Residence</h3>
+          <p>Interior and exterior design for a warm family home.</p>
+        </div>
+      </article>
+
+      <article class="card" data-project-id="2">
+        <img class="thumb" src="img/prj2.jpg" alt="Project 2" loading="lazy">
+        <div class="meta">
+          <h3>Modern Office Fitout</h3>
+          <p>Open-plan workspace with curated lighting.</p>
+        </div>
+      </article>
+
+      <article class="card" data-project-id="3">
+        <img class="thumb" src="img/luxury-villa.jpg" alt="Project 3" loading="lazy">
+        <div class="meta">
+          <h3>Minimalist Apartment</h3>
+          <p>Small footprint, big impact — clever storage solutions.</p>
+        </div>
+      </article>
+
+      <article class="card" data-project-id="4">
+        <img class="thumb" src="img/prj1.jpg" alt="Project 4" loading="lazy">
+        <div class="meta"><h3>Cafe Interior — Riverside</h3><p>Cozy, natural materials, soft lighting.</p></div>
+      </article>
+
+      <article class="card" data-project-id="5">
+        <img class="thumb" src="img/prj2.jpg" alt="Project 5" loading="lazy">
+        <div class="meta"><h3>Boutique Retail</h3><p>Display-focused layout and premium finishes.</p></div>
+      </article>
+
+      <article class="card" data-project-id="6">
+        <img class="thumb" src="img/founder.png" alt="Project 6" loading="lazy">
+        <div class="meta"><h3>Heritage Restoration</h3><p>Preserving character while upgrading utilities.</p></div>
+      </article>
+
+      <article class="card" data-project-id="7">
+        <img class="thumb" src="img/prj1.jpg" alt="Project 7" loading="lazy">
+        <div class="meta"><h3>Urban Terrace</h3><p>Landscape and outdoor living for a compact lot.</p></div>
+      </article>
+
+      <article class="card" data-project-id="8">
+        <img class="thumb" src="img/prj2.jpg" alt="Project 8" loading="lazy">
+        <div class="meta"><h3>Healthcare Clinic</h3><p>Hygienic, accessible, and calming interiors.</p></div>
+      </article>
+
+      <article class="card" data-project-id="9">
+        <img class="thumb" src="img/luxury-villa.jpg" alt="Project 9" loading="lazy">
+        <div class="meta"><h3>Landscape Design</h3><p>Site-sensitive planting and circulation.</p></div>
+      </article>
+
+      <article class="card" data-project-id="10">
+        <img class="thumb" src="img/prj1.jpg" alt="Project 10" loading="lazy">
+        <div class="meta"><h3>Co-living Space</h3><p>Flexible pods, communal kitchens, community areas.</p></div>
+      </article>
+
+      <article class="card" data-project-id="11">
+        <img class="thumb" src="img/prj2.jpg" alt="Project 11" loading="lazy">
+        <div class="meta"><h3>Showroom Interior</h3><p>Lighting-first presentation for product lines.</p></div>
+      </article>
+
+      <article class="card" data-project-id="12">
+        <img class="thumb" src="img/prj1.jpg" alt="Project 12" loading="lazy">
+        <div class="meta"><h3>Farmhouse Renovation</h3><p>Adaptive reuse with modern services.</p></div>
+      </article>
+
+      <article class="card" data-project-id="13">
+        <img class="thumb" src="img/prj2.jpg" alt="Project 13" loading="lazy">
+        <div class="meta"><h3>Restaurant Brand — Concept</h3><p>Brand-forward interiors and service strategy.</p></div>
+      </article>
+
+      <article class="card" data-project-id="14">
+        <img class="thumb" src="img/luxury-villa.jpg" alt="Project 14" loading="lazy">
+        <div class="meta"><h3>Community Center</h3><p>Multi-use halls and flexible performance area.</p></div>
+      </article>
+
+      <article class="card" data-project-id="15">
+        <img class="thumb" src="img/prj1.jpg" alt="Project 15" loading="lazy">
+        <div class="meta"><h3>Landscape Lighting</h3><p>Night-time experience and safety-first design.</p></div>
+      </article>
+
+    </section>
+  </div>
+
+  <!-- Modal template (single DOM node used for all projects) -->
+  <div class="modal-backdrop" id="modalBackdrop" aria-hidden="true">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-head">
+        <h2 id="modalTitle">Project title</h2>
+        <button class="close" id="modalClose" aria-label="Close modal">✕</button>
+      </div>
+
+      <div class="modal-body">
+        <div class="gallery">
+          <div class="main" id="galleryMain">
+            <img src="img/prj1.jpg" alt="main image" id="mainImg">
+          </div>
+          <div class="thumb-row" id="thumbRow">
+            <!-- thumbnails will be injected by JS -->
+          </div>
+        </div>
+
+        <aside class="details">
+          <h3 id="projectShort">Short project subtitle</h3>
+          <p id="projectDesc">Detailed project description will appear here. Replace this text with real project information. For the demo we show a few lines describing the brief, scope, and role.</p>
+
+          <div class="meta-kv">
+            <span id="metaYear">2025</span>
+            <span id="metaType">Interior</span>
+            <span id="metaSize">1200 sq ft</span>
+          </div>
+
+          <div style="margin-top:16px">
+            <button class="btn" id="viewMore">View full gallery</button>
+          </div>
+        </aside>
+      </div>
+
+      <div class="modal-footer">
+        <div class="muted">Click thumbnails to switch image · Esc to close</div>
+        <div>
+          <a class="btn" href="#contact">Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+  <script>
+    /* Static project data (replace with real copy/images). Each project has an array of images. */
+    const PROJECTS = {
+      1:{
+        id:1,
+        title:'Luxury Villa — Private Residence',
+        subtitle:'Interior and exterior design for a warm family home',
+        desc:`A full-scope residential project including concept, interior execution, FF&E selection and landscape. We focused on daylighting, thermal comfort and a warm material palette.`,
+        year:2024,
+        type:'Residential',
+        size:'3500 sq ft',
+        images:['img/prj1.jpg','img/prj2.jpg','img/luxury-villa.jpg','img/prj1.jpg','img/prj2.jpg']
+      },
+      2:{
+        id:2,title:'Modern Office Fitout',subtitle:'Open-plan workspace',desc:'Workspace plan, lighting design and wayfinding for a 40-person office.',year:2023,type:'Commercial',size:'2500 sq ft',images:['img/prj2.jpg','img/prj1.jpg','img/luxury-villa.jpg']
+      },
+      3:{id:3,title:'Minimalist Apartment',subtitle:'Small footprint, big impact',desc:'Smart storage and multifunctional furniture to maximize the living area.',year:2022,type:'Residential',size:'650 sq ft',images:['img/luxury-villa.jpg','img/prj1.jpg','img/prj2.jpg']},
+      4:{id:4,title:'Cafe Interior — Riverside',subtitle:'Cozy cafe experience',desc:'Material-led fitout with local crafts and layered lighting.',year:2023,type:'Hospitality',size:'800 sq ft',images:['img/prj1.jpg','img/prj2.jpg','img/luxury-villa.jpg']},
+      5:{id:5,title:'Boutique Retail',subtitle:'Display-first showroom',desc:'Custom fixtures to showcase product and create circulation.',year:2024,type:'Retail',size:'1200 sq ft',images:['img/prj2.jpg','img/prj1.jpg']},
+      6:{id:6,title:'Heritage Restoration',subtitle:'Preserve and upgrade',desc:'Interventions to strengthen structure while retaining character.',year:2021,type:'Conservation',size:'2000 sq ft',images:['img/founder.png','img/prj1.jpg']},
+      7:{id:7,title:'Urban Terrace',subtitle:'Green rooftop design',desc:'Planting strategy and seating for an intimate rooftop.',year:2024,type:'Landscape',size:'600 sq ft',images:['img/prj1.jpg','img/luxury-villa.jpg']},
+      8:{id:8,title:'Healthcare Clinic',subtitle:'Calm medical interior',desc:'Wayfinding and hygienic materials for a neighbourhood clinic.',year:2023,type:'Healthcare',size:'900 sq ft',images:['img/prj2.jpg','img/prj1.jpg']},
+      9:{id:9,title:'Landscape Design',subtitle:'Site-sensitive planting',desc:'Circulation-led layout with native species.',year:2022,type:'Landscape',size:'5000 sq ft',images:['img/luxury-villa.jpg','img/prj2.jpg']},
+      10:{id:10,title:'Co-living Space',subtitle:'Flexible communal living',desc:'Modular furniture and community-first plan.',year:2024,type:'Residential',size:'4000 sq ft',images:['img/prj1.jpg','img/prj2.jpg']},
+      11:{id:11,title:'Showroom Interior',subtitle:'Product presentation',desc:'Neutral backdrop with accent lighting.',year:2023,type:'Retail',size:'1800 sq ft',images:['img/prj2.jpg','img/luxury-villa.jpg']},
+      12:{id:12,title:'Farmhouse Renovation',subtitle:'Adaptive reuse',desc:'Retaining character while providing modern comfort.',year:2021,type:'Residential',size:'2200 sq ft',images:['img/prj1.jpg','img/prj2.jpg']},
+      13:{id:13,title:'Restaurant Concept',subtitle:'Brand-focused interior',desc:'Operational layout and mood-driven finishes.',year:2024,type:'Hospitality',size:'1500 sq ft',images:['img/prj2.jpg','img/prj1.jpg']},
+      14:{id:14,title:'Community Center',subtitle:'Multi-use public space',desc:'Flexible halls and support spaces.',year:2023,type:'Public',size:'6000 sq ft',images:['img/luxury-villa.jpg','img/prj1.jpg']},
+      15:{id:15,title:'Landscape Lighting',subtitle:'Night-time experience',desc:'Layered illumination for safety and drama.',year:2022,type:'Landscape',size:'800 sq ft',images:['img/prj1.jpg','img/prj2.jpg']}
+    };
+
+    // Open modal & populate
+    const backdrop = document.getElementById('modalBackdrop');
+    const mainImg = document.getElementById('mainImg');
+    const thumbRow = document.getElementById('thumbRow');
+    const modalTitle = document.getElementById('modalTitle');
+    const projectShort = document.getElementById('projectShort');
+    const projectDesc = document.getElementById('projectDesc');
+    const metaYear = document.getElementById('metaYear');
+    const metaType = document.getElementById('metaType');
+    const metaSize = document.getElementById('metaSize');
+    const modalClose = document.getElementById('modalClose');
+
+    function openProject(id){
+      const p = PROJECTS[id];
+      if(!p) return;
+      modalTitle.textContent = p.title;
+      projectShort.textContent = p.subtitle;
+      projectDesc.textContent = p.desc;
+      metaYear.textContent = p.year;
+      metaType.textContent = p.type;
+      metaSize.textContent = p.size;
+
+      // main image default to first
+      mainImg.src = p.images[0];
+      mainImg.alt = p.title;
+
+      // thumbnails
+      thumbRow.innerHTML = '';
+      p.images.forEach((src, i)=>{
+        const img = document.createElement('img');
+        img.src = src; img.alt = p.title + ' ' + (i+1);
+        img.loading = 'lazy';
+        img.addEventListener('click', ()=>{ mainImg.src = src; });
+        thumbRow.appendChild(img);
+      });
+
+      backdrop.classList.add('show');
+      backdrop.setAttribute('aria-hidden','false');
+      // focus trap: focus close for keyboard users
+      modalClose.focus();
+    }
+
+    function closeModal(){
+      backdrop.classList.remove('show');
+      backdrop.setAttribute('aria-hidden','true');
+    }
+
+    // wire cards
+    document.querySelectorAll('.card').forEach(card=>{
+      card.addEventListener('click', ()=>{
+        const id = card.getAttribute('data-project-id');
+        openProject(id);
+      });
+      card.addEventListener('keypress', (e)=>{ if(e.key==='Enter') card.click(); });
+      card.tabIndex = 0;
+    });
+
+    modalClose.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', (e)=>{ if(e.target===backdrop) closeModal(); });
+
+    document.addEventListener('keydown', (e)=>{
+      if(e.key==='Escape') closeModal();
+    });
+
+    // optional: view full gallery button opens images in new tab (simple behavior)
+    document.getElementById('viewMore').addEventListener('click', ()=>{
+      const current = modalTitle.textContent;
+      // find project by title
+      const p = Object.values(PROJECTS).find(x=>x.title===current);
+      if(!p) return;
+      // open first image in new tab as placeholder for full gallery page
+      window.open(p.images[0], '_blank');
+    });
+  </script>
+</body>
+</html>

@@ -110,7 +110,55 @@
     <div class="hero-content">
       <h1><span class="calligraphy">Luxury & Comfort</span></h1>
       <h2>Passionate Living Spaces</h2>
-      <a href="#contact" class="btn">Book Appointment</a>
+      
+      <a href="javascript:void(0)" class="btn1" id="bookBtn">Book Appointment</a>
+
+<!-- Contact Modal -->
+<div id="contactModal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Contact Us</h2>
+
+    <div class="contact-card" data-type="call" data-link="tel:+919007776923">
+      <i class="fas fa-phone-alt contact-icon"></i>
+      <div class="contact-info">
+        <strong>Call Us</strong>
+        <span>+91 9007776923</span>
+        <p>Reach us directly for any inquiries. Available Mon–Sat, 9am–6pm.</p>
+      </div>
+    </div>
+
+    <div class="contact-card" data-type="email" data-link="mailto:farez@fsinfrastructure.com">
+      <i class="fas fa-envelope contact-icon"></i>
+      <div class="contact-info">
+        <strong>Email</strong>
+        <span>farez@fsinfrastructure.com</span>
+        <p>Send us an email anytime. Usually responds within 24 hours.</p>
+      </div>
+    </div>
+
+    <div class="contact-card" data-type="map" data-link="https://www.google.com/maps/search/?api=1&query=Green+Paradise+Apartment+Santoshpur+Station+Road+Kolkata">
+      <i class="fas fa-map-marker-alt contact-icon"></i>
+      <div class="contact-info">
+        <strong>Office</strong>
+        <p>Green Paradise Apartment,<br>Santoshpur Station Road,<br>Kolkata, West Bengal, India 700066</p>
+        <p>Visit our main office during business hours. Parking available nearby.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Confirmation Modal -->
+<div id="confirmModal" class="modal">
+  <div class="modal-content" style="max-width:350px; text-align:center;">
+    <p id="confirmMsg" style="font-size:16px; margin-bottom:20px;"></p>
+    <div style="display:flex; justify-content:center; gap:20px;">
+      <button id="confirmYes" class="btn1" style="padding:8px 20px;">Proceed</button>
+      <button id="confirmNo" class="btn1" style="background:#333; color:#F5BD02; padding:8px 20px;">Cancel</button>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 

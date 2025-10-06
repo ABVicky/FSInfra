@@ -126,4 +126,45 @@ if (contactBtn && contactOptions) {
         contactOptions.style.pointerEvents = 'none';
     });
 }
+// ---------------Get Appointemnt Modal----------------
+const modal = document.getElementById("contactModal");
+const btn = document.getElementById("bookBtn");
+const close = document.querySelector(".close");
+const cards = document.querySelectorAll(".contact-card");
 
+const confirmModal = document.getElementById("confirmModal");
+const confirmMsg = document.getElementById("confirmMsg");
+const confirmYes = document.getElementById("confirmYes");
+const confirmNo = document.getElementById("confirmNo");
+
+let redirectLink = "";
+
+// Open Contact Modal
+btn.onclick = () => modal.classList.add("show");
+
+// Close Contact Modal
+close.onclick = () => modal.classList.remove("show");
+
+// Close if clicked outside
+window.onclick = e => { 
+  if(e.target == modal) modal.classList.remove("show"); 
+  if(e.target == confirmModal) confirmModal.classList.remove("show");
+}
+
+// Click on card -> open confirmation
+cards.forEach(card => {
+  card.addEventListener("click", () => {
+    const type = card.getAttribute("data-type");
+    redirectLink = card.getAttribute("data-link");
+    let msg = "";
+    if(type === "call") msg = "This will open your phone app to make a call. Proceed?";
+    else if(type === "email") msg = "This will open your email client. Proceed?";
+    else if(type === "map") msg = "This will open Google Maps. Proceed?";
+    confirmMsg.textContent = msg;
+    confirmModal.classList.add("show");
+  });
+});
+
+// Confirm modal buttons
+confirmYes.onclick = () => { window.location.href = redirectLink; confirmModal.classList.remove("show"); }
+confirmNo.onclick = () => { confirmModal.classList.remove("show"); }

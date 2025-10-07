@@ -168,3 +168,6 @@ cards.forEach(card => {
 // Confirm modal actions
 confirmYes.onclick = () => { window.location.href = redirectLink; confirmModal.classList.remove("show"); }
 confirmNo.onclick = () => { confirmModal.classList.remove("show"); }
+
+
+//Services Section Tabs

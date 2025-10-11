@@ -269,106 +269,41 @@
     </div>
   </section>
 
-  <!-- Services Section -->
-  <section id="services" class="services">
-    <div class="container">
-      <h2>Our Services</h2>
-      <div class="service-list"> <!-- Interior Design -->
-        <div class="service-card"> <i class="fas fa-couch" aria-hidden="true"></i>
-          <h3>Interior Design</h3>
-          <p>Creating stylish and functional interiors tailored to your lifestyle.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-bed" aria-hidden="true"></i>
-          <h3>Bedroom Design</h3>
-          <p>Designing calm and personalized bedroom spaces for comfort and elegance.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-utensils" aria-hidden="true"></i>
-          <h3>Kitchen Design</h3>
-          <p>Crafting modern, practical kitchen designs with smart storage solutions.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-bath" aria-hidden="true"></i>
-          <h3>Bathroom Design</h3>
-          <p>Designing clean, luxurious bathrooms with a focus on relaxation and function.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-chair" aria-hidden="true"></i>
-          <h3>Dining Design</h3>
-          <p>Creating inviting dining spaces that blend aesthetics with comfort.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-briefcase" aria-hidden="true"></i>
-          <h3>Office Design</h3>
-          <p>Optimizing workspaces for productivity, creativity, and collaboration.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-store" aria-hidden="true"></i>
-          <h3>Shop & Showroom Design</h3>
-          <p>Developing engaging commercial interiors to enhance customer experience.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-hotel" aria-hidden="true"></i>
-          <h3>Hotel & Resort Design</h3>
-          <p>Designing luxurious hospitality spaces that create memorable experiences.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-hospital" aria-hidden="true"></i>
-          <h3>Hospital & Nursing Home Design</h3>
-          <p>Delivering safe, efficient, and patient-focused healthcare environments.</p>
-        </div> <!-- Architectural Design -->
-        <div class="service-card"> <i class="fas fa-building" aria-hidden="true"></i>
-          <h3>Architectural Design</h3>
-          <p>Planning innovative and sustainable architectural solutions for all projects.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-drafting-compass" aria-hidden="true"></i>
-          <h3>Plan & Elevation</h3>
-          <p>Delivering accurate plans and elevations tailored to client needs.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-vector-square" aria-hidden="true"></i>
-          <h3>2D & 3D Layouts</h3>
-          <p>Providing detailed 2D drawings and 3D visualizations for clarity and precision.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-sun" aria-hidden="true"></i>
-          <h3>Roof Top Design</h3>
-          <p>Transforming rooftops into beautiful, functional outdoor spaces.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-tree" aria-hidden="true"></i>
-          <h3>Landscape Design</h3>
-          <p>Designing outdoor environments that blend nature and modern aesthetics.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-archway" aria-hidden="true"></i>
-          <h3>Facade Design</h3>
-          <p>Creating modern and timeless exterior designs for striking visual appeal.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-city" aria-hidden="true"></i>
-          <h3>Corporate Design</h3>
-          <p>Designing impactful business environments that reflect brand identity.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-drafting-compass" aria-hidden="true"></i>
-          <h3>Architectural Design & Solution</h3>
-          <p>Offering complete architectural solutions from concept to execution.</p>
-        </div> <!-- Creative & Branding -->
-        <div class="service-card"> <i class="fas fa-paint-brush" aria-hidden="true"></i>
-          <h3>Business Logo Design</h3>
-          <p>Designing unique and meaningful logos that represent your brand essence.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-id-card" aria-hidden="true"></i>
-          <h3>Visiting Card Design</h3>
-          <p>Creating elegant and professional visiting cards for lasting impressions.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-cube" aria-hidden="true"></i>
-          <h3>Product Design</h3>
-          <p>Turning ideas into practical, visually appealing product designs.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-chair" aria-hidden="true"></i>
-          <h3>Furniture Design</h3>
-          <p>Designing custom furniture pieces to match your space and taste.</p>
-        </div> <!-- Consultancy & Solutions -->
-        <div class="service-card"> <i class="fas fa-user-tie" aria-hidden="true"></i>
-          <h3>Design Consultancy</h3>
-          <p>Providing expert guidance to bring clarity and precision to every design vision.</p>
-        </div>
-        <div class="service-card"> <i class="fas fa-hard-hat" aria-hidden="true"></i>
-          <h3>Civil Solution</h3>
-          <p>Delivering reliable civil engineering solutions with structural excellence.</p>
-        </div>
+ <!-- Services Section -->
+<!-- Services Section -->
+<section id="services" class="services">
+  <div class="container">
+    <h2>Our Services</h2>
+
+    <!-- Main Category Cards -->
+    <div class="category-list">
+      <div class="category-card" data-category="interior">
+        <i class="fas fa-couch"></i>
+        <h3>Interior Design</h3>
+      </div>
+
+      <div class="category-card" data-category="building">
+        <i class="fas fa-drafting-compass"></i>
+        <h3>Building Plan</h3>
+      </div>
+
+      <div class="category-card" data-category="architecture">
+        <i class="fas fa-city"></i>
+        <h3>Architectural Plan</h3>
       </div>
     </div>
-  </section>
+  </div>
+</section>
+
+<!-- Popup Modal -->
+<div class="popup-overlay" id="popup">
+  <div class="popup-content">
+    <span class="close-btn" id="closePopup">&times;</span>
+    <h2 id="popupTitle"></h2>
+    <div id="popupServices" class="popup-services"></div>
+  </div>
+</div>
+
 
 
   <!-- Testimonials Section -->

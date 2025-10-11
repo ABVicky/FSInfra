@@ -415,45 +415,135 @@ a {
   color: #F5BD02;
 }
 
-.service-list {
+.category-list {
   display: flex;
   justify-content: center;
-  gap: 30px;
+  gap: 40px;
   flex-wrap: wrap;
 }
 
-.service-card {
-  background: #fdf5e6; /* light warm background */
-  padding: 30px 20px;
+.category-card {
+  background: #fdf5e6;
+  padding: 40px 30px;
   border-radius: 15px;
   width: 280px;
   transition: transform 0.3s, box-shadow 0.3s;
-  text-align: center;
+  cursor: pointer;
 }
 
-.service-card i {
-  font-size: 40px;
+.category-card i {
+  font-size: 45px;
   color: #F5BD02;
   margin-bottom: 20px;
 }
 
-.service-card h3 {
+.category-card h3 {
   font-size: 1.4rem;
-  margin-bottom: 10px;
   color: #333;
 }
 
-.service-card p {
-  font-size: 0.95rem;
-  color: #555;
-  line-height: 1.5;
-}
-
-.service-card:hover {
+.category-card:hover {
   transform: translateY(-10px);
   box-shadow: 0 15px 30px rgba(245, 189, 2, 0.4);
   background: #fff8e1;
 }
+
+/* Popup Modal */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(51, 51, 51, 0.7);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-overlay.active {
+  display: flex;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.popup-content {
+  background: #fff;
+  border-radius: 20px;
+  padding: 40px;
+  width: 90%;
+  max-width: 1000px;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+  overflow-y: auto;
+  max-height: 90vh;
+}
+
+.popup-content h2 {
+  color: #F5BD02;
+  margin-bottom: 30px;
+  font-size: 2rem;
+}
+
+.popup-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+}
+
+.popup-services .service-card {
+  background: #fdf5e6;
+  border-radius: 15px;
+  padding: 25px;
+  width: 260px;
+  transition: 0.3s;
+}
+
+.popup-services .service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(245, 189, 2, 0.3);
+  background: #fff8e1;
+}
+
+.popup-services .service-card i {
+  font-size: 35px;
+  color: #F5BD02;
+  margin-bottom: 15px;
+}
+
+.popup-services .service-card h3 {
+  font-size: 1.2rem;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.popup-services .service-card p {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.close-btn {
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 30px;
+  color: #555;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.close-btn:hover {
+  color: #F5BD02;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
 
 /* -------------------- TESTIMONIALS -------------------- */
 .testimonials {

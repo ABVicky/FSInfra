@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&display=swap');
+
 /* -------------------- THEME VARIABLES -------------------- */
 :root {
   /* -------------------- CORE PALETTE -------------------- */
@@ -70,8 +72,6 @@ h1, h2, h3, h4 {
   font-family: var(--font-heading);
   color: var(--color-primary);
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Tangerine:wght@700&display=swap');
 
 .calligraphy1 {
   font-family: 'Italianno', serif;

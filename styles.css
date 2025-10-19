@@ -1365,8 +1365,8 @@ a {
   background: var(--overlay-dark);
   justify-content: center;
   align-items: center;
-  overflow-y: auto;
-  padding: 20px;
+  /* padding: 20px; */
+  z-index: 9999;
 }
 
 /* -------------------- MODAL BOX -------------------- */
@@ -1405,7 +1405,8 @@ a {
   cursor: pointer;
   transition: transform var(--transition-fast), color var(--transition-fast);
   padding: 12px;
-  touch-action: manipulation;
+  z-index: 10001;
+  pointer-events: auto;
 }
 
 .close:hover {
@@ -1434,7 +1435,7 @@ a {
   overflow: hidden;
   transition: all var(--transition-medium);
   cursor: pointer;
-  touch-action: manipulation;
+  /* touch-action: manipulation; */
 }
 
 .contact-card::before {

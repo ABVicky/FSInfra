@@ -835,15 +835,15 @@ a {
 }
 
 .footer-section {
-  flex: 1 1 280px;
+  flex: 1 1 250px;
   min-width: 250px;
-  padding: 10px 10px;
+  padding: 0 10px;
   text-align: center;
 }
 
 .center-section {
   text-align: center;
-  flex: 1 1 300px;
+  flex: 1 1 250px;
 }
 
 .footer-section h3 {
@@ -1087,6 +1087,9 @@ a {
     transform: translateX(-50%);
     background-color: var(--color-primary);
   }
+  .footer-section {
+    flex: 1 1 30%;
+  }
 
   .social-links a {
     background: var(--color-primary);
@@ -1294,7 +1297,7 @@ a {
   }
 
   .footer {
-    padding: 60px 15px 30px;
+    padding: 0 15px;
     background: var(--color-bg);
     color: var(--color-text);
   }
